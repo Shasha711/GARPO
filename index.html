@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garpo Portfolio</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #E0E0E0; 
+            background-color: #020302; 
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: #8c6d85; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #E0E0E0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #E0E0E0; 
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+
+        .navbar a:hover {
+            color: #b8728a; 
+        }
+
+        .home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .home-content {
+            max-width: 700px;
+        }
+
+        .home-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #31c8e2; 
+        }
+
+        .home-content span {
+            color:#31c8e2; 
+        }
+
+        .home-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color:#31c8e2;  
+        }
+
+        .home-content p {
+            color: #E0E0E0; 
+            text-align: left;
+            font-size: 16px;
+            margin: 20px 0 40px;
+        }
+
+        .btn-box {
+            display: flex;
+            justify-content: space-between;
+            width: 345px;
+            height: 50px;
+        }
+
+        .btn-box a {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 100%;
+            background: #858481; 
+            border: 2px solid #858481; 
+            border-radius: 8px;
+            font-size: 19px;
+            color: #bf2931; 
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .btn-box a:hover::before {
+            background: #cad535; 
+            
+        }
+
+        .home-sci {
+            position: absolute;
+            bottom: 40px;
+            width: 350px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .home-sci a {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            
+            border: 2px solid #8e074f; 
+            border-radius: 50%;
+            font-size: 20px;
+            color: #8e074f; 
+            text-decoration: none;
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s;
+        }
+
+        .home-sci a:hover {
+            color: #E0E0E0;
+        }
+
+        .home-sci a:hover::before {
+            background: #ca6608; 
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #8e074f; 
+            height: 50vh;
+        }
+
+        .about h1, .about p {
+            color: #dfedf4;
+        }
+
+        .about-container {
+            width: 50%;
+        }
+
+        .about h1 {
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        .services {
+            background-color: #8e074f; 
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50vh;
+        }
+
+        .box p, .box h3 {
+            color: #E0E0E0;
+        }
+
+        .card {
+            border: solid #c4db15; 
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .services h2 {
+            padding-top: 50px;
+            font-size: 40px;
+            font-weight: 700;
+            color: #E0E0E0; 
+        }
+
+        .portfolio-container {
+            background-color: #5e1b3c; 
+            padding-bottom: 50px;
+        }
+
+        .portfolio-container h1, .portfolio-container h2 {
+            color: #E0E0E0; 
+        }
+
+        .websites, .digitalarts {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .contact {
+            padding-top: 50px;
+            background-color: #0f0f0fcb; 
+        }
+
+        .contactme h1 {
+            font-size: 40px;
+            color: #aa6b19; 
+        }
+
+        .contactme {
+            display: grid;
+            justify-content: center;
+        }
+
+        .info {
+            background: #708090;
+            padding: 20px;
+            border-radius: 15px;
+            color: #E0E0E0; 
+        }
+
+        footer {
+            background: #2f4f4f; 
+            color: #E0E0E0; 
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Angeli Garpo</a>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi! I am <span>Angeli!</span></h1>
+            <h3><span class="multiple-text"></span></h3>
+            <p>As a computer science student, I apply my skills by developing projects, interning with tech companies, participating in coding competitions, contributing to open source, engaging in research, 
+                continuously learning about new technologies, and networking with industry professionals.</p>
+            <div class="btn-box">
+                <a href="#contact">Contact Me</a>
+                <a href="#about">Check me</a>
+            </div>
+        </div>
+
+        <div class="home-sci">
+            <a href="https://www.facebook.com/" target="_blank" title="Facebook">
+                <i class="bx bxl-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank" title="Twitter">
+                <i class="bx bxl-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram">
+                <i class="bx bxl-instagram"></i>
+            </a>
+        </div>
+        </div>
+            
+       
+    </section>
+    <section class="about" id="about">
+        <div class="about-container">
+            <h1>About me!</h1><br>
+            <p>I’m Angeli Garpo, a computer science student passionate about technology and problem-solving, 
+                dedicated to learning and applying new skills to create innovative solutions and tackle complex challenges.</p>
+        </div>
+        
+    </section>
+    <section class="services" id="services">
+      
+            <div class="services">
+        <div class="box">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1 class="card-title">Web Development Services</h1>
+
+                    <p class="card-text">I offer front-end development services that include designing and styling websites using HTML, CSS, and JavaScript, 
+                        focusing on responsive design, interactive features, and optimal performance for a seamless user experience.</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1 class="card-title">Data Science and Analysis</h1>
+
+                    <p class="card-text">Data Science and Analysis involve using statistical methods, machine learning, and visualization techniques to interpret data, uncover insights, and support decision-making. 
+                        This process includes collecting, and presenting data to reveal patterns and trends.</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1 class="card-title">Technical Support</h1>
+
+                    <p class="card-text">Technical Support and Maintenance services ensure that technology systems operate effectively by offering troubleshooting, regular updates, 
+                        and problem resolution, keeping systems running smoothly and preventing disruptions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-container">
+       
+            <br><h2>Websites</h2><br />
+            <div class="websites">
+                <img src="gar.jpg" height="200px" alt="Website 1">
+                <img src="po.jpg" height="200px" alt="Website 2">
+            </div><br>
+            
+    </section>
+    <section class="contact" id="contact">
+        <div class="contactme">
+            <center>
+                <h1>Contact me here!</h1><br />
+            </center>
+            <div class="info">
+                <p><i class='bx bx-user'></i> Angeli Garpo</p>
+                <p><i class='bx bx-envelope'></i> angeligarpo3@gmail.com</p>
+                <p><i class='bx bx-phone-call'></i> 09934668521</p>
+            </div>
+        </div><br><br>
+    </section>
+    <footer style="background: #2f4f4f; color: #E0E0E0;">
+        
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".multiple-text", {
+            strings: [
+                "A 3rd year college student",
+                "Bachelor of Computer Science",
+              
+            ],
+            typeSpeed: 40,
+            backSpeed: 40,
+            backDelay: 1000,
+            startDelay: 500,
+            loop: true,
+            cursorChar: '|',
+            smartBackspace: true
+        });
+    </script>
+</body>
+</html>
